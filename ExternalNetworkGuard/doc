@@ -1,0 +1,13 @@
+1. Purpose:
+
+The guard is designed to block requests coming from outside the internal network.
+
+2. How It Works:
+
+When a request is made, the guard checks if it includes a specific header (X-Envoy-External-Address).
+This header indicates that the request is coming from an external network.
+
+3. Decision Making:
+
+If the header is present, the guard stops the request and returns a 403 Forbidden status.
+If the header is not present, the request is allowed to continue as normal.
